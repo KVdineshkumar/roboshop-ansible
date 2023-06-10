@@ -1,6 +1,4 @@
-vars:
-  component: catalogue
-tasks:
-  - name: lode NodeJS
-    ansible.builtin.include_tasks:
-      file: nodejs.yml
+- name: Load NodeJS
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: nodejs
