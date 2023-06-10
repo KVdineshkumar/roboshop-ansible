@@ -1,0 +1,6 @@
+vars:
+  component: catalogue
+tasks:
+  - name: lode NodeJS
+    ansible.builtin.include_tasks:
+      file: nodejs.yml
