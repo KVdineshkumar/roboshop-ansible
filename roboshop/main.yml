@@ -1,8 +1,8 @@
-- name: Setup MongoDB
+- name: Setup RoboShop Project
   hosts: all
   become: yes
   roles:
-    - Mongodb
+    -  "{{ role_name }}"
 
 
 
