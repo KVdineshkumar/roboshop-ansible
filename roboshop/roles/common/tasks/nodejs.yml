@@ -7,5 +7,5 @@
     state: installed
 
 - name: App Pre-requisites
-  ansible.builtin.import_task:
+  ansible.builtin.import_tasks:
     file: app_presetup.yml
