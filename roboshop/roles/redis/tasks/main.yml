@@ -1,0 +1,24 @@
+
+
+
+#echo -e "${color}Updating listing Address ${nocolor}"
+#sed -i -e 's/127.0.0.1/0.0.0.0/'  -e 's/127.0.0.1/0.0.0.0/' /etc/redis.conf  /etc/redis/redis.conf  &>>${log_file}
+#stat_check $?
+
+
+#echo -e "${color}Starting Redis ${nocolor}"
+#systemctl enable redis  &>>${log_file}
+#systemctl start redis  &>>${log_file}
+#stat_check $?
+
+
+- name: Install Redis Repos
+  ansible.builtin.yum:
+    name: https://rpms.remirepo.net/enterprise/remi-release-8.rpm
+    state: installed
+
+- name: Install Redis
+  ansible.builtin.dnf:
+    name: '@redis:6.2'
+    state: installed
+
