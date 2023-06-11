@@ -4,8 +4,8 @@
     state: installed
     disable_gpg_check: true
 
-- name: enable Redis 6 Version
-  ansible.builtin.dnf: yum module enable redis:remi-6.2 -y
+- name: Enable Redis 6 Version
+  ansible.builtin.Shell: yum module enable redis:remi-6.2 -y
 
 - name: Install Redis
   ansible.builtin.dnf:
