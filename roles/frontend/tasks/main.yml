@@ -22,7 +22,7 @@
 - name: Copy roboshop configuration
   ansible.builtin.template:
     src: roboshop.conf
-    dest: /etc/nginx/default.d/roboshop.conf
+    dest: /etc/nginx/defaults.d/roboshop.conf
 
 - name: Enable Nginx service
   ansible.builtin.systemd:

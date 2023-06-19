@@ -1,4 +1,4 @@
-- name: Disabling mysql 8 version which is coming default
+- name: Disabling mysql 8 version which is coming defaults
   ansible.builtin.shell: yum module disable mysql -y
 
 - name: Copy my SQL Repo file
