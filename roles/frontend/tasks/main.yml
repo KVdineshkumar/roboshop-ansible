@@ -3,14 +3,14 @@
     name: nginx
     state: latest
 
-
 - name: Remove directory
   ansible.builtin.file:
-    path: /usr/share/nginx/html/*
+    path: /usr/share/nginx/html
     state: absent
+
 - name: Add directory
   ansible.builtin.file:
-    path: /usr/share/nginx/html/*
+    path: /usr/share/nginx/html
     state: directory
 
 - name: Downloading Zip file Extracting Frontend content
@@ -24,18 +24,20 @@
     src: roboshop.conf
     dest: /etc/nginx/default.d/roboshop.conf
 
-
-
-
 - name: Enable Nginx service
   ansible.builtin.systemd:
     name: nginx
     enabled: yes
 
-- name: Restart Nginx service
+- name: Start Nginx Service
   ansible.builtin.systemd:
-    name: nginx
     state: restarted
+    name: nginx
+    enabled: true
+
+
+
+
 
 
 
