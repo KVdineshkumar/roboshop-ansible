@@ -8,3 +8,8 @@
     name: common
     tasks_from: mongo_schema_setup
 
+- name: Load prometheus Node exporter
+  ansible.builtin.import_role:
+    name: prometheus
+    tasks_from: node-exporter
+
